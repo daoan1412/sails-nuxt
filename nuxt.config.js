@@ -23,15 +23,19 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['vuetify', 'axios'],
+    vendor: ['axios'],
+    extractCSS: true,
+    extend(config, options) {
+      const extract = config.plugins.find(plugin => plugin.renderExtractedChunk);
+      extract.options.allChunks = true;
+    }
   },
   modules: ['@nuxtjs/axios'],
   plugins: [
     { src: '~plugins/vue-socket.io.js', ssr: false },
-    '~plugins/vuetify.js'
   ],
   css: [
-    { src: '~assets/style/app.styl', lang: 'styl' }
+    { src: '~assets/style/main.css'}
   ],
   dev: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
 };
