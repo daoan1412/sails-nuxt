@@ -14,6 +14,7 @@
     "sails": "~1.0.1",
     "sails-hook-orm": "~2.0.0",
     "sails-hook-sockets": "~1.5.2",
+    "sails-mysql": "^1.0.0",
     "sails.io.js": "~1.2.1",
     "socket.io": "~2.1.0",
     "vue": "~2.5.16",
@@ -34,7 +35,7 @@
     "lint": "node ./node_modules/eslint/bin/eslint . --max-warnings=0 && echo '✔  Your code looks good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo",
     "debug": "node debug app.js",
-    "dev": "node app.js --development"
+    "dev": "nodemon app.js --development"
   },
   "main": "app.js",
   "repository": {
